@@ -1,0 +1,8 @@
+﻿  Source.cpp
+\\zeus\profile$\955307901\desktop\cs133\secretdtrepo\datetime\datetime\source.cpp(13): error C3867: 'PB_DATETIME::CTime::print': non-standard syntax; use '&' to create a pointer to member
+  CTime.cpp
+\\zeus\profile$\955307901\desktop\cs133\secretdtrepo\datetime\datetime\ctime.cpp(39): error C2572: 'PB_DATETIME::CTime::CTime': redefinition of default argument: parameter 1
+  \\zeus\profile$\955307901\desktop\cs133\secretdtrepo\datetime\datetime\ctime.h(73): note: see declaration of 'PB_DATETIME::CTime::CTime'
+\\zeus\profile$\955307901\desktop\cs133\secretdtrepo\datetime\datetime\ctime.cpp(39): error C2572: 'PB_DATETIME::CTime::CTime': redefinition of default argument: parameter 2
+  \\zeus\profile$\955307901\desktop\cs133\secretdtrepo\datetime\datetime\ctime.h(73): note: see declaration of 'PB_DATETIME::CTime::CTime'
+  Generating Code...

@@ -1,0 +1,6 @@
+﻿  Date.cpp
+  CTime.cpp
+  Generating Code...
+c:\users\hanju\home\cpp_projects\secretdtrepo\datetime\date.cpp(354): warning C4715: 'HJ_DATETIME::Date::daysInMonth': not all control paths return a value
+  date_Time.vcxproj -> C:\Users\hanju\Home\cpp_Projects\SecretDTRepo\dateTime\x64\Debug\date_Time.exe
+  date_Time.vcxproj -> C:\Users\hanju\Home\cpp_Projects\SecretDTRepo\dateTime\x64\Debug\date_Time.pdb (Partial PDB)

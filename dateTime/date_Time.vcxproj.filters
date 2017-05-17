@@ -24,15 +24,15 @@
     <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="DateTimeDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArraySort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ArraySorts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CTime.h">

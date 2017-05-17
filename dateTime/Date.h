@@ -15,7 +15,7 @@
 //    Description:	This file contains the class definition for Date
 //
 //    Programmer:	Paul Bladek
-//   
+//					Han Jung
 //    Date:             4/7/2008
 // 
 //    Version:          1.0
@@ -71,6 +71,7 @@
 //			void print(ostream& sout)const;
 //
 //    History Log:
+//						4/28/17 HJ completed version 1.1
 //                      4/7/08  PB  completed version 1.0
 // ----------------------------------------------------------------------------
 
@@ -81,9 +82,10 @@
 #include "Comparable.h"
 using namespace std;
 
-namespace PB_DATETIME
+namespace HJ_DATETIME
 {
 	const short LOWYEAR = 1760;
+	const short MAXYEAR = 9999; // No one needs to know that far in the future
 	const short DAYSINYEAR = 365;
 	const short STARTDAYOFWEEK = 2;
 	const short MONTHSINYEAR = 12;
@@ -92,26 +94,28 @@ namespace PB_DATETIME
 	class Date : virtual public Comparable
 	{
 	public:
-		Date(short day = -1, short month = -1, short year = -1);
+		Date(void);
+		Date(short day, short month, short year);
+		Date(Date &dateToDate);
 		virtual ~Date(void) {}
 		// pure virtuals that MUST be defined
 		virtual bool operator==(const Comparable &other)const;
 		virtual bool operator!=(const Comparable &other)const
 		{
-			return !((*this) == other);
+			return *this != other;
 		}
 		virtual bool operator<(const Comparable &other)const;
 		virtual bool operator>(const Comparable &other)const
 		{
-			return !((*this) < other) && !((*this) == other);
+			return *this > other && *this != other;
 		}
 		virtual bool operator<=(const Comparable &other)const
 		{
-			return !((*this) > other);
+			return *this <= other;
 		}
 		virtual bool operator>=(const Comparable &other)const
 		{
-			return !((*this) < other);
+			return *this >= other;
 		}
 		virtual void input(istream& sin);
 		virtual void print(ostream& sout)const;
@@ -138,18 +142,10 @@ namespace PB_DATETIME
 		Date yesterday()const;
 
 		//statics
-		static bool isLeapYear(short year)
-		{/* your code goes here */	return true;
-		}
-		static short daysInMonth(short month, short year)
-		{/* your code goes here */	return true;
-		}
-		static const char* monthName(int monthNum)
-		{/* your code goes here */	return "";
-		}
-		static const char* weekdayName(int weekdayNum)
-		{/* your code goes here */	return "";
-		}
+		static bool isLeapYear(short year);
+		static short daysInMonth(short month, short year);
+		static const char* monthName(int monthNum);
+		static const char* weekdayName(int weekdayNum);
 
 	protected:
 		short m_year;  // full year, i.e., 2012

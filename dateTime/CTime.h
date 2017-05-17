@@ -4,7 +4,6 @@
 //	class: CTime
 //-----------------------------------------------------------------------------
 #pragma once
-
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -13,9 +12,8 @@
 #include "Comparable.h"
 using namespace std;
 
-namespace PB_DATETIME
+namespace HJ_DATETIME
 {
-
 	const short MAXHOUR = 24;
 	const short MAXMINSEC = 60;
 	//-----------------------------------------------------------------------------
@@ -28,6 +26,7 @@ namespace PB_DATETIME
 	//    Description:		This file contains the class definition for CTime
 	//
 	//    Programmer:		Paul Bladek
+	//						Han Jung
 	//   
 	//    Date:             4/7/2008
 	// 
@@ -64,34 +63,35 @@ namespace PB_DATETIME
 	//				void print(ostream& sout)const
 	//
 	//    History Log:
-	//                      4/7/08  PB  completed version 1.0
+	//						4/28/17  HJ  completed version 1.1
+	//                      4/07/08  PB  completed version 1.0
 	// ----------------------------------------------------------------------------
 	class CTime : virtual public Comparable
 	{
 	public:
 		CTime(void);
 		CTime(int hour, int minute = 0, int second = 0);
-
+		CTime(CTime &TimetoTime);
 		// pure virtuals that MUST be defined		
 		virtual void input(istream& sin);
 		virtual void print(ostream& sout)const;
 		virtual bool operator==(const Comparable &other)const;
 		virtual bool operator!=(const Comparable &other)const
 		{
-			return !((*this) == other);
+			return *this != other;
 		}
 		virtual bool operator<(const Comparable &other)const;
 		virtual bool operator>(const Comparable &other)const
 		{
-			return !((*this) < other) && !((*this) == other);
+			return *this > other && *this != other;
 		}
 		virtual bool operator<=(const Comparable &other)const
 		{
-			return !((*this) > other);
+			return *this <= other;
 		}
 		virtual bool operator>=(const Comparable &other)const
 		{
-			return !((*this) < other);
+			return *this >= other;
 		}
 
 		// Accessors

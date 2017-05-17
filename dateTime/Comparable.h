@@ -42,10 +42,11 @@ using namespace std;
 //				output: *this to sout
 //
 //    History Log:
+//						4/28/17 HJ	completed version 1.1
 //                      4/7/08  PB  completed version 1.0
 //-----------------------------------------------------------------------------
 
-namespace PB_DATETIME
+namespace HJ_DATETIME
 {
 	class Comparable
 	{
@@ -59,6 +60,5 @@ namespace PB_DATETIME
 		virtual void input(istream& sin) = 0;
 		virtual void print(ostream& sout)const = 0;
 		virtual ~Comparable() {}
-
 	};
 }
